@@ -1,0 +1,18 @@
+# Sample Terraform Variables Configuration
+# Copy this file to terraform.tfvars and customize the values
+
+# AWS Region where resources will be created
+aws_region = "us-east-1"
+
+# EC2 Instance type for Faro receiver
+# Recommended: t2.small or larger for production workloads
+instance_type = "t2.small"
+
+# S3 Bucket name for storing source maps
+# NOTE: Must be globally unique across all AWS accounts
+# Suggestion: Add a unique suffix like timestamp or company name
+bucket_name = "faro-source-maps-bucket-CHANGEME"
+
+# SSH Key pair name (must exist in your AWS account)
+# Create one using: aws ec2 create-key-pair --key-name terraform-key
+key_name = "terraform-key"

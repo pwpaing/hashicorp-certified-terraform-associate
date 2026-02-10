@@ -1,0 +1,19 @@
+# Terraform files to ignore
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+!terraform.tfvars.example
+*.tfplan
+.terraform.tfstate.lock.info
+
+# Crash log files
+crash.log
+
+# SSH keys
+*.pem
+private-key/
+
+# OS files
+.DS_Store
