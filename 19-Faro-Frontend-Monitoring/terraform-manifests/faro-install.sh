@@ -75,7 +75,7 @@ faro.receiver "default" {
 
   output {
     logs   = [loki.write.default.receiver]
-    traces = [otlp.exporter.default.input]
+    traces = [otelcol.exporter.otlp.default.input]
   }
 }
 

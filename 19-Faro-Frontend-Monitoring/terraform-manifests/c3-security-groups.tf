@@ -8,6 +8,9 @@ resource "aws_security_group" "faro-ssh" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
+    # WARNING: 0.0.0.0/0 allows access from any IP address
+    # For production, restrict this to your specific IP or IP range
+    # Example: cidr_blocks = ["203.0.113.0/24"]
     cidr_blocks = ["0.0.0.0/0"]
   }
   
@@ -50,6 +53,9 @@ resource "aws_security_group" "faro-receiver" {
     from_port   = 12345
     to_port     = 12345
     protocol    = "tcp"
+    # WARNING: 0.0.0.0/0 allows access from any IP address
+    # For production, restrict this to your frontend app origins or CDN IPs
+    # Example: cidr_blocks = ["203.0.113.0/24", "198.51.100.0/24"]
     cidr_blocks = ["0.0.0.0/0"]
   }
 

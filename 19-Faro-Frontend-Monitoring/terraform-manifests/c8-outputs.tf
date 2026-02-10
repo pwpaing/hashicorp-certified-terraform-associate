@@ -31,7 +31,7 @@ output "s3_bucket_arn" {
 
 output "ssh_command" {
   description = "SSH command to connect to the instance"
-  value       = "ssh -i terraform-key.pem ec2-user@${aws_instance.faro_receiver.public_ip}"
+  value       = "ssh -i ${var.key_name}.pem ec2-user@${aws_instance.faro_receiver.public_ip}"
 }
 
 output "source_maps_mount_path" {
